@@ -2,7 +2,7 @@
 
 # Variables
 resourceGroup="acdnd-c4-project"
-location="westus"
+location="eastus"
 osType="UbuntuLTS"
 vmssName="udacity-vmss"
 adminName="udacityadmin"
@@ -69,8 +69,8 @@ az vmss create \
   --upgrade-policy-mode automatic \
   --admin-username $adminName \
   --generate-ssh-keys \
-  --verbose 
-
+  --verbose \
+  --lb-sku Standard
 echo "VM scale set created: $vmssName"
 
 # Associate NSG with VMSS subnet
